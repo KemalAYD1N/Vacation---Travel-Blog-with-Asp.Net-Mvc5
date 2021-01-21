@@ -1,0 +1,28 @@
+﻿@*model sınıflarımızı kullanabilmek için import ediyoruz*@
+@using VacationTravelSite.Models.Sınıflar
+@*model içerisine aşağıda kullanabilmek için liste atıyoruz*@
+@model List<Hakkimizda>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>About</h3>
+
+            @*yukarıda tanımladığımız hakkımızda listesini burada model içerisinde for ile kullanıyoruz.*@
+            @foreach (var h in Model)
+            {
+                <img src=@h.ImgUrl alt="" /> //veri tabanında ki url kullanılarak resim getirildi.  
+
+                <p>@h.Aciklama</p> //veri tabanından aciklama kısmı getirilir.
+            }
+
+        </div>
+    </div>
+</div>
+
